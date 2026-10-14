@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS mca26;
+USE mca26;
+
+CREATE TABLE IF NOT EXISTS student (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    dob DATE NOT NULL,
+    mobile VARCHAR(15) NOT NULL UNIQUE,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    address VARCHAR(255) NOT NULL,
+    department ENUM('CSE', 'CST', 'CEN', 'MSc', 'MCA') NOT NULL,
+    cgpa DECIMAL(4,2) NOT NULL
+);
