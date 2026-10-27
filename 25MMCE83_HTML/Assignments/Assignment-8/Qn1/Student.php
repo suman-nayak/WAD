@@ -19,7 +19,7 @@ class Student {
         $name, $gender, $dob, $mobile,
         $email, $address, $department, $cgpa
     ) {
-        $sql = "INSERT INTO student
+        $sql = "INSERT INTO students
                 (name, gender, dob, mobile, email,
                  address, department, cgpa)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -39,7 +39,7 @@ class Student {
     }
 
     function all_students() {
-        $sql = "SELECT * FROM student ORDER BY student_id";
+        $sql = "SELECT * FROM students ORDER BY student_id";
 
         $ps = $this->conn->prepare($sql);
         $ps->execute();
@@ -53,7 +53,7 @@ class Student {
     }
 
     function get_student_by_id($id) {
-        $sql = "SELECT * FROM student WHERE student_id = ?";
+        $sql = "SELECT * FROM students WHERE student_id = ?";
 
         $ps = $this->conn->prepare($sql);
         $ps->bind_param("i", $id);
@@ -71,7 +71,7 @@ class Student {
         $id, $name, $gender, $dob, $mobile,
         $email, $address, $department, $cgpa
     ) {
-        $sql = "UPDATE student SET
+        $sql = "UPDATE students SET
                 name = ?, gender = ?, dob = ?, mobile = ?,
                 email = ?, address = ?, department = ?, cgpa = ?
                 WHERE student_id = ?";
@@ -91,7 +91,7 @@ class Student {
     }
 
     function delete_student($id) {
-        $sql = "DELETE FROM student WHERE student_id = ?";
+        $sql = "DELETE FROM students WHERE student_id = ?";
 
         $ps = $this->conn->prepare($sql);
         $ps->bind_param("i", $id);
