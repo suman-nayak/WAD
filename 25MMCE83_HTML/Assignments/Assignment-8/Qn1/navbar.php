@@ -67,7 +67,7 @@
                 </li>
             </ul>
             <form class="d-flex" role="search" action="search_student.php" method="post">
-          <input class="form-control me-2" type="search" name="search_key" placeholder="Enter product name" aria-label="Search" />
+          <input class="form-control me-2" type="search" name="search_key" placeholder="Enter student name" aria-label="Search" />
           <button class="btn btn-outline-light" type="submit">
             <i class="bi bi-search"></i>
           </button>

@@ -10,7 +10,6 @@ function get_connection()
     $conn=null;
     try{
         $conn=new mysqli($HOST,$USER,$PASS,$DB,$PORT);
-        // echo "Connected..";
     }
     catch(mysqli_sql_exception $se)
     {
@@ -18,5 +17,4 @@ function get_connection()
     }
     return $conn;
 }
-// get_connection();
 ?>

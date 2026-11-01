@@ -3,9 +3,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $fname = $_POST['fname'];
     $dob = $_POST['dob'];
-    setcookie("name", $name, time() + 60, "/");
-    setcookie("fname", $fname, time() + 60, "/");
-    setcookie("dob", $dob, time() + 60, "/");
+    setcookie("name", $name, time() + 3600, "/");
+    setcookie("fname", $fname, time() + 3600, "/");
+    setcookie("dob", $dob, time() + 3600, "/");
     header("Location: form2.php");
     exit;
 }

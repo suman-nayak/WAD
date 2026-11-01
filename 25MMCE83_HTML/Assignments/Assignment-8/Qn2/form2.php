@@ -3,9 +3,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mobile = $_POST['mobile'];
     $email = $_POST['email'];
     $address = $_POST['address'];
-    setcookie("mobile", $mobile, time() + 60, "/");
-    setcookie("email", $email, time() + 60, "/");
-    setcookie("address", $address, time() + 60, "/");
+    setcookie("mobile", $mobile, time() + 3600, "/");
+    setcookie("email", $email, time() + 3600, "/");
+    setcookie("address", $address, time() + 3600, "/");
     header("Location: verify.php");
     exit;
 }

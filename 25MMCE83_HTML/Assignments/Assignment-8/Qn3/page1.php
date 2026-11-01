@@ -1,27 +1,23 @@
 
 <?php
-
 session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['num1'] = (float)$_POST['num1'];
-    header("Location: page2.php");
-    exit;
+
+if(isset($_POST['submit']))
+{
+    $_SESSION['num1'] = $_POST['num1'];
+    header("location:page2.php");
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
 <body>
-    <h2>Enter the 1st NUMBER:</h2>
-    <FORM method="post">
-        Enter the first Number:
+    <h2>Enter First Number</h2>
+
+    <form method="post">
+        Enter First Number:
         <input type="number" name="num1" required>
-        <input type="submit" value="Next">
+        <input type="submit" name="submit" value="Next">
     </form>
 </body>
 </html>
