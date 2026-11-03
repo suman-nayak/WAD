@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qn5</title>
+</head>
+<body>
+    <script>
+        function countVowels(str){
+            var count =0;
+            for( let i=0;i<=str.length;i++)
+            {
+                 let stt=str.toLowerCase();
+                let ch=(stt.charAt(i));
+            if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+            {
+                count++;
+            }
+        }
+        return count;
+        }
+        let str="SuMaN";
+        let c=countVowels(str);
+        console.log(`${str} has ${c} vowels.`);
+    </script>
+</body>
+</html>
