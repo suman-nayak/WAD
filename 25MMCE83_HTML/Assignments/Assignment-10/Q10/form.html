@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .input {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .error {
+            display: block;
+            color: red;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form action="thankyou.html" method="post" onsubmit="validate(event)">
+
+        <label>Name</label>
+        <input type="text" id="name" class="input">
+        <label class="error" id="nameError"></label>
+
+        <label>Gender</label>
+        <div>
+            <input type="radio" name="gender" id="male" value="Male"> Male
+            <input type="radio" name="gender" id="female" value="Female"> Female
+            <input type="radio" name="gender" id="other" value="Other"> Other
+        </div>
+        <label class="error" id="genderError"></label>
+
+        <label>DOB</label>
+        <input type="date" id="dob" class="input">
+        <label class="error" id="dobError"></label>
+
+        <label>Address</label>
+        <textarea id="address" class="input"></textarea>
+        <label class="error" id="addressError"></label>
+
+        <label>Mobile</label>
+        <input type="text" id="mobile" class="input">
+        <label class="error" id="mobileError"></label>
+
+        <label>Email</label>
+        <input type="text" id="email" class="input">
+        <label class="error" id="emailError"></label>
+
+        <label>Country</label>
+        <select id="country" class="input">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+        </select>
+        <label class="error" id="countryError"></label>
+
+        <label>Password</label>
+        <input type="password" id="password" class="input">
+        <label class="error" id="passwordError"></label>
+
+        <label>Confirm Password</label>
+        <input type="password" id="password2" class="input">
+        <label class="error" id="password2Error"></label>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <script src="validation.js"></script>
+
+</body>
+</html>

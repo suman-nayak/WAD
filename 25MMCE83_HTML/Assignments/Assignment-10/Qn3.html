@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Circle On Off</title>
+    <style>
+        .circle {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="circle" class="circle"></div>
+    <br>
+    <button id="btn" onclick="changeColor()">On</button>
+
+    <script>
+        function changeColor(){
+            let circle = document.getElementById("circle");
+            let btn = document.getElementById("btn");
+
+            if(btn.innerHTML == "On"){
+                circle.style.backgroundColor = "yellow";
+                btn.innerHTML = "Off";
+            } else {
+                circle.style.backgroundColor = "white";
+                btn.innerHTML = "On";
+            }
+        }
+    </script>
+
+</body>
+</html>

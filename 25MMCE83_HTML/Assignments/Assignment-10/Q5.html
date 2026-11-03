@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Hide Paragraph</title>
+</head>
+<body>
+
+    <p id="para">
+        JavaScript is a programming language used to make web pages interactive.
+        It can change HTML content and CSS styles.
+    </p>
+
+    <button onclick="display()" id="btn">Hide</button>
+
+    <script>
+        function display() {
+            let para = document.getElementById("para");
+            let btn = document.getElementById("btn");
+
+            if(btn.innerHTML == "Hide") {
+                para.style.display = "none";
+                btn.innerHTML = "Show";
+            } else {
+                para.style.display = "block";
+                btn.innerHTML = "Hide";
+            }
+        }
+    </script>
+
+</body>
+</html>

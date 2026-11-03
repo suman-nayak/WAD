@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background Color</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box" class="box"></div>
+    <br>
+
+    <button onclick="changeColor('red')">Red</button>
+    <button onclick="changeColor('green')">Green</button>
+    <button onclick="changeColor('blue')">Blue</button>
+
+    <script>
+        function changeColor(colorName) {
+            if(confirm('Are you sure?')) {
+                let box = document.getElementById("box");
+                box.style.backgroundColor = colorName;
+            }
+        }
+    </script>
+
+</body>
+</html>

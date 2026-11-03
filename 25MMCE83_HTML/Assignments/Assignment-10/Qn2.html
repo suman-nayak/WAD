@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Event</title>
+</head>
+<body>
+
+    <h1 id="heading" onmouseover="changeText()" onmouseout="changeBack()">
+        JavaScript
+    </h1>
+
+    <script>
+        function changeText(){
+            let h1 = document.getElementById("heading");
+            h1.innerHTML = "Welcome to HTML";
+        }
+
+        function changeBack(){
+            let h1 = document.getElementById("heading");
+            h1.innerHTML = "JavaScript";
+        }
+    </script>
+
+</body>
+</html>

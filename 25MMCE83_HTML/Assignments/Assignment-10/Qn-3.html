@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Circle</title>
+</head>
+<body>
+
+    <div id="circle"></div>
+
+    <button id="toggleBtn">On</button>
+
+    <script>
+        const circle = document.getElementById("circle");
+        const button = document.getElementById("toggleBtn");
+
+     
+        circle.style.width = "100px";
+        circle.style.height = "100px";
+        circle.style.borderRadius = "50%";
+        circle.style.backgroundColor = "white";
+        circle.style.border = "1px solid black";
+
+        
+        button.addEventListener("click", function() {
+
+            if (button.innerText === "On") {
+                circle.style.backgroundColor = "yellow";
+                button.innerText = "Off";
+            }
+            else {
+                circle.style.backgroundColor = "white";
+                button.innerText = "On";
+            }
+
+        });
+    </script>
+
+</body>
+</html>
+
+</html>

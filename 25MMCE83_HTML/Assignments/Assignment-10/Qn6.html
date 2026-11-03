@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart Counter</title>
+</head>
+<body>
+
+    <button onclick="decrement()">-</button>
+
+    <input type="text" id="count" value="1" readonly>
+
+    <button onclick="increment()">+</button>
+
+    <script>
+        function increment() {
+            let count = document.getElementById("count");
+            let c = parseInt(count.value);
+
+            c++;
+            count.value = c;
+
+            if(c > 10) {
+                count.style.color = "red";
+            } else {
+                count.style.color = "black";
+            }
+        }
+
+        function decrement() {
+            let count = document.getElementById("count");
+            let c = parseInt(count.value);
+
+            if(c > 1) {
+                c--;
+                count.value = c;
+            }
+
+            if(c > 10) {
+                count.style.color = "red";
+            } else {
+                count.style.color = "black";
+            }
+        }
+    </script>
+
+</body>
+</html>
