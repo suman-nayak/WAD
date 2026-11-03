@@ -1,0 +1,27 @@
+<!-- 2. Write a function reverseNum(num) which will return reverse of a given number -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tWO</title>
+</head>
+<body>
+    <script>
+        var rem=0;
+        var rev=0;
+        function reverseNum(num){
+            while(num!=0){
+                rem=num%10;
+                rev=rev*10+rem;
+                num=parseInt(num/10);
+            }
+            return rev;
+        }
+        let n=123;
+        let re=reverseNum(n);
+          console.log(`${n} is original num and reverse num is ${re}`);
+    </script>
+</body>
+</html>

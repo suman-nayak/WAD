@@ -1,0 +1,37 @@
+<!-- 9. Create a student object with roll, name, mobile, and email. Display the student details.
+Write code to update the mobile number of the student and display again. Write code
+to add a key value payer for spga which contains an array of SGPAs of four semesters.
+Calculate the CGPA of the student and display it. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine</title>
+</head>
+<body>
+    <script>
+       let student = { 
+            "name": "Tom", 
+            "roll": 20, 
+            "mobile" : "7894561236",
+            "email":"tom@gmail.com",
+        }
+        console.log(student);
+        student["mobile"] = "9874563210";
+        console.log(student);
+        student['sgpa']=[9.5,5.6,7.5,6.5];
+        console.log(student);
+        let cgpa=0;
+        let sum=0.0;
+        for(let i=0;i<student.sgpa.length;i++)
+        {
+            sum+=parseFloat(student.sgpa[i]);
+            cgpa=parseFloat(sum/5);
+        }
+        student['cgpa']=cgpa;
+        console.log(student);
+    </script>
+</body>
+</html>
