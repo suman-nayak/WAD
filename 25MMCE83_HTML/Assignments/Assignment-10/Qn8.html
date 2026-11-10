@@ -12,8 +12,8 @@
     <br><br>
 
     <label>Gender:</label>
-    <input type="radio" name="gender" id="male" value="male"> Male
-    <input type="radio" name="gender" id="female" value="female"> Female
+    <input type="radio" name="gender" id="male"> Male
+    <input type="radio" name="gender" id="female"> Female
     <br><br>
 
     <label>Height (CM):</label>
@@ -38,10 +38,14 @@
             let bmr = 0;
 
             if(document.getElementById("male").checked) {
+
                 bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+
             }
             else if(document.getElementById("female").checked) {
+
                 bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+
             }
 
             document.getElementById("result").innerHTML =

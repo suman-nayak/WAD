@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Checker</title>
+
+    <style>
+        .input {
+            padding: 5px;
+            border: 2px solid black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Password Strength Checker</h1>
+
+    <label>Enter Password:</label>
+    <input type="password" id="password" class="input"
+        oninput="checkPassword()">
+
+    <button onclick="showPassword()">Show</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+
+        function checkPassword() {
+
+            let password = document.getElementById("password");
+            let result = document.getElementById("result");
+
+            let pass = password.value;
+
+            if(pass == "") {
+                result.innerHTML = "";
+                password.style.borderColor = "black";
+            }
+            else {
+
+                let count = 0;
+
+                let lengthPattern = /^.{8,}$/;
+                let upperPattern = /[A-Z]/;
+                let lowerPattern = /[a-z]/;
+                let numberPattern = /[0-9]/;
+                let specialPattern = /[@#$%&]/;
+
+                if(lengthPattern.test(pass)) {
+                    count++;
+                }
+
+                if(upperPattern.test(pass)) {
+                    count++;
+                }
+
+                if(lowerPattern.test(pass)) {
+                    count++;
+                }
+
+                if(numberPattern.test(pass)) {
+                    count++;
+                }
+
+                if(specialPattern.test(pass)) {
+                    count++;
+                }
+
+                if(count < 3) {
+                    result.innerHTML = "Password Strength: Weak";
+                    result.style.color = "red";
+                    password.style.borderColor = "red";
+                }
+                else if(count <= 4) {
+                    result.innerHTML = "Password Strength: Medium";
+                    result.style.color = "orange";
+                    password.style.borderColor = "yellow";
+                }
+                else {
+                    result.innerHTML = "Password Strength: Strong";
+                    result.style.color = "green";
+                    password.style.borderColor = "green";
+                }
+            }
+        }
+
+        function showPassword() {
+
+            let password = document.getElementById("password");
+            let btn = document.getElementsByTagName("button")[0];
+
+            if(password.type == "password") {
+                password.type = "text";
+                btn.innerHTML = "Hide";
+            }
+            else {
+                password.type = "password";
+                btn.innerHTML = "Show";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mouse Event</title>
+    <title>Character Counter</title>
 </head>
 <body>
 
-    <h1 id="heading" onmouseover="changeText()" onmouseout="changeBack()">
-        JavaScript
-    </h1>
+    <h1>Character Counter</h1>
+
+    <textarea id="text" rows="5" cols="30"
+        oninput="countCharacter()"></textarea>
+
+    <p id="result">Remaining Characters: 100</p>
 
     <script>
-        function changeText(){
-            let h1 = document.getElementById("heading");
-            h1.innerHTML = "Welcome to HTML";
-        }
+        function countCharacter() {
 
-        function changeBack(){
-            let h1 = document.getElementById("heading");
-            h1.innerHTML = "JavaScript";
+            let text = document.getElementById("text");
+            let result = document.getElementById("result");
+
+            let count = text.value.length;
+            let remaining = 100 - count;
+
+            if(count > 100) {
+                result.innerHTML = "Character limit reached!";
+                result.style.color = "red";
+            } else {
+                result.innerHTML = "Remaining Characters: " + remaining;
+                result.style.color = "black";
+            }
         }
     </script>
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator</title>
+</head>
+<body>
+
+    <h1>Strong Password Generator</h1>
+
+    <label>Enter Password Length:</label>
+    <input type="number" id="length">
+
+    <br><br>
+
+    <button onclick="generatePassword()">Generate Password</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+
+        function generatePassword() {
+
+            let len = Number(document.getElementById("length").value);
+
+            if(len < 8 || len > 16) {
+
+                document.getElementById("result").innerHTML =
+                "Password length must be between 8 and 16 characters.";
+
+            }
+            else {
+
+                let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                let lower = "abcdefghijklmnopqrstuvwxyz";
+                let number = "0123456789";
+                let special = "@#$%&";
+
+                let all = upper + lower + number + special;
+
+                let password = [];
+
+                password.push(upper.charAt(Math.floor(Math.random() * upper.length)));
+                password.push(lower.charAt(Math.floor(Math.random() * lower.length)));
+                password.push(number.charAt(Math.floor(Math.random() * number.length)));
+                password.push(special.charAt(Math.floor(Math.random() * special.length)));
+
+                for(let i = 4; i < len; i++) {
+                    password.push(all.charAt(Math.floor(Math.random() * all.length)));
+                }
+
+                for(let i = password.length - 1; i > 0; i--) {
+
+                    let j = Math.floor(Math.random() * (i + 1));
+
+                    let temp = password[i];
+                    password[i] = password[j];
+                    password[j] = temp;
+
+                }
+
+                let result = password.join("");
+
+                document.getElementById("result").innerHTML =
+                "Generated Password: " + result;
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>

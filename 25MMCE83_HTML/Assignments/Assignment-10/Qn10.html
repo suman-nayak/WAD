@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Text Styling</title>
+</head>
+<body>
+
+    <h1 id="heading">Welcome to JavaScript</h1>
+    <label>Select Font Family:</label>
+
+    <select id="font" onchange="changeFont()">
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Times New Roman">Times New Roman</option>
+    </select>
+
+    <br><br>
+
+    <label>Select Text Color:</label>
+    <input type="color" id="color" oninput="changeColor()">
+
+    <script>
+
+        function changeFont() {
+            let heading = document.getElementById("heading");
+            let font = document.getElementById("font");
+            heading.style.fontFamily = font.value;
+        }
+
+        function changeColor() {
+            let heading = document.getElementById("heading");
+            let color = document.getElementById("color");
+            heading.style.color = color.value;
+        }
+
+    </script>
+
+</body>
+</html>

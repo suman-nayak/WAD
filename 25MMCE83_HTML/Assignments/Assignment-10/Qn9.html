@@ -1,62 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Password Generator</title>
+    <title>Currency Converter</title>
 </head>
 <body>
 
-    <h1>Strong Password Generator</h1>
+    <h1>Currency Converter</h1>
 
-    <label>Enter Password Length:</label>
-    <input type="number" id="length">
+    <label>USD ($):</label>
+    <input type="number" id="usd" oninput="convertUSD()">
 
-    <button onclick="generatePassword()">Generate Password</button>
+    <br><br>
 
-    <h3 id="result"></h3>
+    <label>INR (₹):</label>
+    <input type="number" id="inr" oninput="convertINR()">
 
     <script>
-        function generatePassword() {
 
-            let len = Number(document.getElementById("length").value);
+        function convertUSD() {
 
-            if(len < 8 || len > 16) {
-                document.getElementById("result").innerHTML =
-                "Password length must be between 8 and 16 characters.";
-            }
-            else {
+            let usd = Number(document.getElementById("usd").value);
+            let inr = usd * 80;
+            document.getElementById("inr").value = inr;
 
-                let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                let lower = "abcdefghijklmnopqrstuvwxyz";
-                let numbers = "0123456789";
-                let special = "!@#$%^&*";
-                let all = upper + lower + numbers + special;
-
-                let password = [];
-
-                password.push(upper.charAt(Math.floor(Math.random() * upper.length)));
-                password.push(lower.charAt(Math.floor(Math.random() * lower.length)));
-                password.push(numbers.charAt(Math.floor(Math.random() * numbers.length)));
-                password.push(special.charAt(Math.floor(Math.random() * special.length)));
-
-                for(let i = 4; i < len; i++) {
-                    password.push(all.charAt(Math.floor(Math.random() * all.length)));
-                }
-
-                // Shuffle password
-                for(let i = password.length - 1; i > 0; i--) {
-                    let j = Math.floor(Math.random() * (i + 1));
-
-                    let temp = password[i];
-                    password[i] = password[j];
-                    password[j] = temp;
-                }
-
-                let result = password.join("");
-
-                document.getElementById("result").innerHTML =
-                "Generated Password: " + result;
-            }
         }
+
+        function convertINR() {
+
+            let inr = Number(document.getElementById("inr").value);
+            let usd = inr / 80;
+            document.getElementById("usd").value = usd;
+
+        }
+
     </script>
 
 </body>
