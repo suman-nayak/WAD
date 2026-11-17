@@ -1,0 +1,41 @@
+<!-- 4. Create an unordered list with some product name and price as
+demonstrated below. Create a form with two filed Product name and
+price. Once form is submitted add the product to the unordered list with
+the help of jQuery.
+Example Unordered List:
+• Mobile (Rs/- 22000)
+• Laptop (Rs/- 88000)
+• Ear Bud (Rs/- 3999) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four</title>
+</head>
+<body>
+    <form id="addform">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><br>
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price"><br>
+        <input type="submit" value="Submit" >
+        <ul id="list"><h3>Product List</h3></ul>
+    </form>
+    <script src="./Jq/jquery-4.0.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#addform").on("submit",function(e){
+                e.preventDefault();
+                let name=$("#name").val();
+                let price=Number($("#price").val());
+                let htmlstr=`<li>${name} Rs:${price}</li>`;
+                 $("#list").append(htmlstr);
+                $("#name").val("");
+                $("#price").val("");
+            })
+        })
+    </script>
+</body>
+</html>

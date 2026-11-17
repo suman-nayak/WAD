@@ -1,0 +1,61 @@
+<!--
+3. Consider the following array of objects and display the data in a tabular
+format
+const products = [
+ { pid: 1, name: "Wireless Mouse", category: "Electronics", price: 29.99, rating: 4.5 },
+ { pid: 2, name: "Bluetooth Headphones", category: "Electronics", price: 59.99, rating: 4.7 },
+ { pid: 3, name: "Gaming Keyboard", category: "Electronics", price: 89.99, rating: 4.6 },
+ { pid: 4, name: "Coffee Maker", category: "Home Appliances", price: 49.99, rating: 4.2 },
+ { pid: 5, name: "Air Fryer", category: "Home Appliances", price: 99.99, rating: 4.8 },
+ { pid: 6, name: "Yoga Mat", category: "Fitness", price: 19.99, rating: 4.5 },
+ { pid: 7, name: "Fitness Tracker", category: "Fitness", price: 39.99, rating: 4.4 },
+ { pid: 8, name: "Smartphone Stand", category: "Accessories", price: 15.99, rating: 4.3 },
+ { pid: 9, name: "Portable Charger", category: "Accessories", price: 24.99, rating: 4.6 },
+ { pid: 10, name: "Stylish Backpack", category: "Fashion", price: 39.99, rating: 4.5 }
+]; -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three</title>
+</head>
+
+<body>
+    <div id="tab">
+
+    </div>
+    <script src="./Jq/jquery-4.0.0.js"></script>
+    <script>
+        const products = [
+            { pid: 1, name: "Wireless Mouse", category: "Electronics", price: 29.99, rating: 4.5 },
+            { pid: 2, name: "Bluetooth Headphones", category: "Electronics", price: 59.99, rating: 4.7 },
+            { pid: 3, name: "Gaming Keyboard", category: "Electronics", price: 89.99, rating: 4.6 },
+            { pid: 4, name: "Coffee Maker", category: "Home Appliances", price: 49.99, rating: 4.2 },
+            { pid: 5, name: "Air Fryer", category: "Home Appliances", price: 99.99, rating: 4.8 },
+            { pid: 6, name: "Yoga Mat", category: "Fitness", price: 19.99, rating: 4.5 },
+            { pid: 7, name: "Fitness Tracker", category: "Fitness", price: 39.99, rating: 4.4 },
+            { pid: 8, name: "Smartphone Stand", category: "Accessories", price: 15.99, rating: 4.3 },
+            { pid: 9, name: "Portable Charger", category: "Accessories", price: 24.99, rating: 4.6 },
+            { pid: 10, name: "Stylish Backpack", category: "Fashion", price: 39.99, rating: 4.5 }
+        ];
+
+        let htmlstr = `<table border="1" cellspacing="0px" cellpadding="10px">`;
+            htmlstr += `<tr><th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Rating</th></tr>`;
+            for (let p of products) {
+                htmlstr += `<tr>
+                    <td>${p.pid}</td>
+                    <td>${p.name}</td>
+                    <td>${p.category}</td>
+                    <td>${p.price}</td>
+                    <td>${p.rating}</td>
+                    </tr>`;
+                }
+                htmlstr += "</table>";
+                $("#tab").html(htmlstr);
+    </script>
+</body>
+
+</html>
