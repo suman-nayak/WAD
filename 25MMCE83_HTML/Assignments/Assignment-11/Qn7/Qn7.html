@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Availability Check</title>
+</head>
+<body>
+
+    <h2>Check Email Availability</h2>
+
+    <form action="" method="post" id="emailForm">
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <input type="submit" value="Check Email">
+    </form>
+
+    <p id="result"></p>
+
+    <script src="./../jquery-4.0.0.js"></script>
+
+    <script>
+        $("#emailForm").on("submit", function(e){
+            e.preventDefault();
+
+            let email = $("#email").val();
+
+            $.ajax({
+                url: "check_email.php",
+                method: "POST",
+                data: {email: email},
+
+                success: function(res){
+                    console.log(res);
+
+                    res = JSON.parse(res);
+
+                    if(res.status == "taken"){
+                        $("#result").text("Email is already taken");
+                        $("#result").css({"color": "red"});
+                    }
+                    else{
+                        $("#result").text("Email is available");
+                        $("#result").css({"color": "green"});
+                    }
+                },
+
+                error: function(err){
+                    console.log(err);
+                    $("#result").text("Error checking email");
+                    $("#result").css({"color": "red"});
+                }
+            })
+        })
+    </script>
+
+</body>
+</html>

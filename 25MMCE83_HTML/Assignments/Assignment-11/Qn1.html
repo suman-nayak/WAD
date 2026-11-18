@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Assignment Q1</title>
+
+    <style>
+        .my-class {
+            color: blue;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="hh1">JavaScript</h1>
+    <h2 class="heading">jQuery is a JavaScript Library</h2>
+
+    <p id="text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam explicabo consectetur necessitatibus nam sapiente ipsam qui, asperiores minima suscipit eum voluptatem accusamus natus assumenda voluptatibus fugiat, illo provident neque fugit, officia mollitia dolores ipsa vel? Dolores distinctio impedit, esse ab architecto quis dolor odit labore, eum vel ipsum culpa deleniti consectetur ducimus cupiditate exercitationem quisquam. Illum laborum aliquid corporis ipsum cupiditate, recusandae quae ipsam, rem minima quasi impedit veniam, commodi nostrum harum voluptatibus. Saepe natus facilis illo maxime modi repellendus deleniti commodi doloribus nulla accusantium excepturi enim nostrum, cumque rerum reiciendis beatae corrupti quis culpa. Molestias ratione sunt nulla aspernatur, eveniet reiciendis, ullam fugit voluptate cumque accusantium tempore labore id dignissimos delectus maxime illo nihil ea ipsa at distinctio assumenda. Quidem eligendi, provident recusandae consequuntur iusto corrupti porro? Dolorum rerum temporibus modi hic cupiditate explicabo excepturi laudantium voluptas, quod quibusdam ex consectetur suscipit fugiat quis dolore, blanditiis a rem natus, libero fugit. Omnis, aliquid ducimus. Suscipit cupiditate, vel illum non dolores deleniti cumque nemo obcaecati dolor. Explicabo molestias qui eius beatae dolorum? Adipisci mollitia iste odit minima repellat neque odio, soluta harum tempore. Atque eos, itaque autem consequuntur quas facilis eligendi exercitationem? Quos corrupti, ratione, voluptas ad explicabo cum numquam in natus asperiores reprehenderit repellendus perferendis labore corporis animi ipsam nobis nisi aperiam veritatis voluptatum ipsa porro tempore deleniti tempora! Laudantium veniam voluptates iusto? Non perferendis repellat, atque impedit mollitia amet porro? Aliquid culpa mollitia tempore distinctio sequi et nulla molestias quod, consectetur officiis autem eius ea quis, earum officia debitis eaque ad. Laudantium debitis adipisci, deserunt ipsum molestiae eligendi dolores magnam saepe consectetur odio perspiciatis ullam officia qui eos blanditiis cupiditate reiciendis quidem recusandae error necessitatibus repellat eveniet fugiat vitae et! Nihil eveniet maiores illum provident esse minus aperiam odio ullam, quo, eaque cum reiciendis minima assumenda, consectetur voluptates maxime. Iusto nam assumenda esse libero numquam tempora aliquam perspiciatis iure consectetur incidunt laboriosam explicabo doloribus expedita, hic veritatis non ipsa? Quae perferendis saepe neque exercitationem ducimus eaque obcaecati ipsam excepturi nulla, veniam nobis voluptatibus nemo illum? Adipisci sequi, quae officiis nemo nisi cumque doloribus facere cupiditate reiciendis aliquam voluptatibus, eaque commodi maxime? Dicta, numquam inventore aperiam quasi, dolorum dolorem pariatur tenetur doloribus error veritatis nihil repellat, in minus commodi aliquam sapiente illo nemo. Officiis dolorem laudantium dolore laborum adipisci molestiae dignissimos pariatur earum maxime! Debitis nesciunt nam asperiores magnam, sint aut dolorum obcaecati! Error iusto a odit facilis perferendis consectetur totam molestias vitae sed. Iure ratione blanditiis dolor alias labore voluptatum, adipisci consectetur aliquid asperiores omnis molestiae dolore sed pariatur mollitia laborum hic. Esse deserunt dolore ab eaque et neque blanditiis voluptatibus! Porro pariatur ipsa debitis non vero inventore dicta ullam architecto consectetur quam tempore facere fuga, eum, commodi, deserunt facilis! Consequuntur commodi, quaerat odio autem fugiat in voluptatibus dolorem obcaecati illo beatae, similique saepe consectetur ullam? Illum quo amet odit et reprehenderit. Commodi illo, vel beatae totam, impedit minima deleniti, doloremque repellat recusandae modi sed dicta. Illum quam explicabo voluptates rerum facere veniam perferendis enim repellendus recusandae labore.
+    </p>
+
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="toggleBtn">Toggle</button>
+    <button id="fadeOutBtn">Fade Out</button>
+    <button id="fadeInBtn">Fade In</button>
+
+    <script src="./../jquery-4.0.0.js"></script>
+
+    <script>
+
+        $("#hh1").text("jQuery");
+
+        $(".heading").addClass("my-class");
+
+        $("#hideBtn").on("click", function(){
+            $("#text").hide();
+        })
+
+        $("#showBtn").on("click", function(){
+            $("#text").show();
+        })
+
+        $("#toggleBtn").on("click", function(){
+            $("#text").toggle();
+        })
+
+        $("#fadeOutBtn").on("click", function(){
+            $("#text").fadeOut(3000);
+        })
+
+        $("#fadeInBtn").on("click", function(){
+            $("#text").fadeIn(3000);
+        })
+
+    </script>
+
+</body>
+</html>

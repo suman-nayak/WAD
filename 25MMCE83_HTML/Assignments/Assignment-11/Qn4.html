@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+</head>
+<body>
+
+    <h2>Product List</h2>
+
+    <ul id="list">
+        <li>Mobile (Rs/- 22000)</li>
+        <li>Laptop (Rs/- 88000)</li>
+        <li>Ear Bud (Rs/- 3999)</li>
+    </ul>
+
+    <h2>Add New Product</h2>
+
+    <form action="" method="post" id="productForm">
+        <input type="text" id="productName" placeholder="Product Name">
+        <br><br>
+        <input type="text" id="price" placeholder="Product Price">
+        <br><br>
+        <input type="submit" value="Add Product">
+    </form>
+
+    <script src="./../jquery-4.0.0.js"></script>
+
+    <script>
+        $("#productForm").on("submit", function(e){
+            e.preventDefault();
+
+            let name = $("#productName").val();
+            let price = $("#price").val();
+
+            if(name == ""){
+                alert("Enter Product Name");
+                return;
+            }
+
+            if(price == "" || isNaN(price) || Number(price) < 0){
+                alert("Enter a valid Product Price");
+                return;
+            }
+
+            let htmlStr = `<li>${name} (Rs/- ${price})</li>`;
+
+            $("#list").append(htmlStr);
+
+            $("#productName").val("");
+            $("#price").val("");
+        })
+    </script>
+
+</body>
+</html>

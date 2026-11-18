@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Check</title>
+</head>
+<body>
+
+    <h2>Prime Number Checking</h2>
+
+    <form action="" method="post" id="primeForm">
+        <input type="text" id="num" placeholder="Enter a Number">
+        <input type="submit" value="Check Prime">
+    </form>
+
+    <p id="result"></p>
+
+    <script src="./../jquery-4.0.0.js"></script>
+
+    <script>
+        $("#primeForm").on("submit", function(e){
+            e.preventDefault();
+
+            let num = $("#num").val();
+
+            if(num == "" || isNaN(num)){
+                alert("Enter a valid number");
+                return;
+            }
+
+            num = Number(num);
+
+            if(num < 2 || !Number.isInteger(num)){
+                $("#result").html(`${num} is not a Prime Number`);
+                return;
+            }
+
+            let count = 0;
+
+            for(let i = 1; i <= num; i++){
+                if(num % i == 0){
+                    count++;
+                }
+            }
+
+            if(count == 2){
+                $("#result").html(`${num} is a Prime Number`);
+            }
+            else{
+                $("#result").html(`${num} is not a Prime Number`);
+            }
+
+            $("#num").val("");
+        })
+    </script>
+
+</body>
+</html>

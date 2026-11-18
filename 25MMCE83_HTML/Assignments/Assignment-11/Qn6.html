@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Selection</title>
+</head>
+<body>
+
+    <h2>Select Country</h2>
+
+    <form action="" method="post" id="countryForm">
+
+        <select id="country">
+            <option value="">--SELECT COUNTRY--</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="result"></p>
+
+    <script src="./../jquery-4.0.0.js"></script>
+
+    <script>
+        $.ajax({
+            url: "https://countriesnow.space/api/v0.1/countries/flag/unicode",
+            method: "GET",
+
+            success: function(res){
+                console.log(res);
+
+                let countries = res.data;
+                let htmlStr = `<option value="">--SELECT COUNTRY--</option>`;
+
+                for(let c of countries){
+                    htmlStr += `<option value="${c.unicodeFlag}">${c.name}</option>`;
+                }
+
+                $("#country").html(htmlStr);
+            },
+
+            error: function(err){
+                console.log(err);
+            }
+        })
+
+        $("#countryForm").on("submit", function(e){
+            e.preventDefault();
+
+            let code = $("#country").val();
+            let name = $("#country option:selected").text();
+
+            if(code == ""){
+                alert("Please select a country");
+                return;
+            }
+
+            $("#result").html(`Selected Country is ${name} (${code})`);
+        })
+    </script>
+
+</body>
+</html>
